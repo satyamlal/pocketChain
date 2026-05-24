@@ -1,0 +1,8 @@
+{
+  "name": "pocket-chain-workspace",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
