@@ -4,5 +4,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build:core" : "cd packages/core && wasm-pack build --target web",
+    "dev:frontend" : "cd apps/frontend && bun run dev"
+  }
 }
