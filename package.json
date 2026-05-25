@@ -3,7 +3,7 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*/pkg"
   ],
   "scripts": {
     "build:core" : "cd packages/core && wasm-pack build --target web",
