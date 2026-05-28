@@ -62,12 +62,12 @@ export default function PocketChainWallet() {
     <div className="app-root">
       <Card>
         <CardHeader>
-          <CardTitle>PocketChain Wallet</CardTitle>
+          <CardTitle>PocketChain - A web based Solana Wallet</CardTitle>
         </CardHeader>
         <CardContent>
 
           <div className="label-block">
-            <p className="label">Secret Recovery Phrase</p>
+            <p className="label">Seed Phrase</p>
             <div className="controls">
               <Input 
                 readOnly 
@@ -78,7 +78,7 @@ export default function PocketChainWallet() {
                 onClick={handleGenerateMnemonic} 
                 disabled={!isReady}
               >
-                Generate New
+                Generate New Phrase
               </Button>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function PocketChainWallet() {
                 onClick={handleAddWallet} 
                 disabled={!isReady}
               >
-                Add Solana Wallet
+                Add SOL Wallet
               </Button>
 
               <div className="accounts">
