@@ -58,28 +58,25 @@ export default function PocketChainWallet() {
     localStorage.setItem("pocket_keys", JSON.stringify(updatedKeys));
   };
 
-
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-950 p-4">
-      <Card className="w-full max-w-2xl bg-zinc-900 text-zinc-100 border-zinc-800">
+    <div className="app-root">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">PocketChain Wallet</CardTitle>
+          <CardTitle>PocketChain Wallet</CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
-          
-          <div className="space-y-2">
-            <p className="text-sm text-zinc-400 font-medium">Secret Recovery Phrase</p>
-            <div className="flex gap-2">
+        <CardContent>
+
+          <div className="label-block">
+            <p className="label">Secret Recovery Phrase</p>
+            <div className="controls">
               <Input 
                 readOnly 
                 value={mnemonic} 
                 placeholder="Click generate to create phrase..."
-                className="bg-zinc-950 border-zinc-800 text-zinc-300 placeholder:text-zinc-700"
               />
               <Button 
                 onClick={handleGenerateMnemonic} 
                 disabled={!isReady}
-                className="bg-red-600 text-white hover:bg-red-700 whitespace-nowrap"
               >
                 Generate New
               </Button>
@@ -87,20 +84,19 @@ export default function PocketChainWallet() {
           </div>
 
           {mnemonic && (
-            <div className="space-y-4 pt-4 border-t border-zinc-800">
+            <div className="actions-block">
               <Button 
                 onClick={handleAddWallet} 
                 disabled={!isReady}
-                className="w-full bg-white text-black hover:bg-zinc-200"
               >
                 Add Solana Wallet
               </Button>
 
-              <div className="space-y-2">
+              <div className="accounts">
                 {publicKeys.map((pubKey, index) => (
-                  <div key={pubKey} className="p-3 bg-zinc-950 rounded-md border border-zinc-800 flex justify-between items-center">
-                    <span className="text-xs text-zinc-500 font-mono">Account {index}</span>
-                    <span className="text-sm text-zinc-300 font-mono">{pubKey}</span>
+                  <div key={pubKey} className="account-row">
+                    <span className="account-index">Account {index}</span>
+                    <span className="account-key">{pubKey}</span>
                   </div>
                 ))}
               </div>
